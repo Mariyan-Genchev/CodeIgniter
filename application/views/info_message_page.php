@@ -1,0 +1,1 @@
+<p id="info_msg"><?= $this->session->flashdata('infomsg') ?></p>
