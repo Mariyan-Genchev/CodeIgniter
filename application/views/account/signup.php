@@ -9,11 +9,11 @@
 			<?= form_open('account/signUp'); ?>
 
 			<?= form_label('Username:'); ?>
-			<?= form_input('username', $this->input->post('username')); ?>
+			<?= form_input('username', htmlentities($this->input->post('username'))); ?>
 			<?= form_error('username'); ?>
 
 			<?= form_label('Email:'); ?>
-			<?= form_input('email', $this->input->post('email')); ?>
+			<?= form_input('email', htmlentities($this->input->post('email'))); ?>
 			<?= form_error('email'); ?>
 
 			<?= form_label('Password:'); ?>

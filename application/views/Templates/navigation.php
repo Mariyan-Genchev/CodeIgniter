@@ -8,4 +8,4 @@
 </div>
 
 <p id="logout"><a href="<?= base_url() . 'membersArea/logout'?>">Logout</a></p>
-<span><?= $this->session->userdata['username'] ? $this->session->userdata['username'] . '|' : '';?></span>
+<span><?= $this->session->userdata['username'] ? htmlentities($this->session->userdata['username']) . '|' : '';?></span>

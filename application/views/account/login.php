@@ -8,7 +8,7 @@
 		<div class="login_form">
 			<?= form_open('account/login'); ?>
 			<?= form_label('Username:'); ?>
-			<?= form_input('username', $this->input->post('username')); ?>
+			<?= form_input('username', htmlentities($this->input->post('username'))); ?>
 			<?= form_error('username'); ?>
 			
 			<?= form_label('Password:'); ?>

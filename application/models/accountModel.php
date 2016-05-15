@@ -18,6 +18,7 @@ class accountModel extends Ci_Model {
 	public function loginValidation() {
 		$this->load->library('form_validation');
 
+		//global_xss_filtering == TRUE
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
@@ -46,6 +47,7 @@ class accountModel extends Ci_Model {
 	public function signupValidation() {
 		$this->load->library('form_validation');
 
+		//global_xss_filtering == TRUE
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[3]|is_unique[users.username]');
 		$this->form_validation->set_rules('email', 'Email address', 'trim|required|valid_email|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
@@ -94,7 +96,7 @@ class accountModel extends Ci_Model {
 
 	/**
 	 * @param username
-	 * verify if the input password matches with the user password
+	 * verify if the inputed password matches with the user's password
 	 */
 	public function checkUserPermission($username) {
 		$this->db->select('username, password');

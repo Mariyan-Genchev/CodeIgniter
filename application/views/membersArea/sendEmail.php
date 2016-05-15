@@ -2,18 +2,18 @@
 	<h1>Send Email</h1>
 	<hr>
 	
-	<div id="user_email">Your email address: <p><?= $_SESSION['userEmail'] ?></p>
+	<div id="user_email">Your email address: <p><?= htmlentities($_SESSION['userEmail']) ?></p>
 	<a href="<?= base_url() . 'account/changeemail' ?>">Change</a>
 </div>
 
 	<?= form_open('email/sendEmail'); ?>
 
 	<?= form_label('To:'); ?>
-	<?= form_input('email_to', $this->input->post('email_to')); ?>
+	<?= form_input('email_to', htmlentities($this->input->post('email_to'))); ?>
 	<?= form_error('email_to'); ?>
 
 	<?= form_label('Subject:'); ?>
-	<?= form_input('subject', $this->input->post('subject')); ?>
+	<?= form_input('subject', htmlentities($this->input->post('subject'))); ?>
 	<?= form_error('subject'); ?>
 <?php
 	$textAreaData = array(
